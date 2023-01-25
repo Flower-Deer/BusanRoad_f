@@ -20,6 +20,8 @@
 	margin-bottom: 30px;
 }
 </style>
+<!-- 챗봇 -->
+<link href="../resources/css/chatbot.css" rel="stylesheet">
 <title>Insert title here</title>
 <script type="text/javascript">
 		$(function() {
@@ -74,6 +76,20 @@
 </script>
 </head>
 <body>
+<!-- 챗봇 -->
+<div class="chatbot_btn01">
+	<div style="position: absolute; inset: 0px; margin: auto;">
+		<div class="chatbot_btn04">
+			<div class="chatbot_btn03">
+            	<div class="chatbot_btn02">
+					<a onclick="window.open('http://localhost:8888/www/chatbot/chatbot.jsp', 'window_name', 'width=400, height=1000, location=no, status=no, scrollbars=yes');">
+						<img src=../resources/img/chatbot01.png width="48" height="48" style="position: absolute; inset: 0px; margin: auto;">
+                    </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="local-list" style="font-family: 'GmarketSansMedium'; margin-top: 100px; width: 1400px; float: left;" >
 <!-- 카테고리 분류 버튼 -->
 <div class="local-btn-group" role="group" aria-label="Basic outlined example" style ="float:left; ">

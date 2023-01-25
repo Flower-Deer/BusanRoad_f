@@ -37,3 +37,18 @@
 			</div>
      	</div>
      </div>
+
+     <!-- 챗봇 -->
+<div class="chatbot_btn01">
+	<div style="position: absolute; inset: 0px; margin: auto;">
+		<div class="chatbot_btn04">
+			<div class="chatbot_btn03">
+            	<div class="chatbot_btn02">
+					<a onclick="window.open('http://localhost:8888/www/chatbot/chatbot.jsp', 'window_name', 'width=400, height=1000, location=no, status=no, scrollbars=yes');">
+						<img src=../resources/img/chatbot01.png width="48" height="48" style="position: absolute; inset: 0px; margin: auto;">
+                    </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -15,10 +15,10 @@
 		<!-- 창명 -->
 		<typeAlias type="com.multi.www.openAPIXMLtoJSON.TourVO" alias="tourVO"/>
 		<!-- 재일 -->
-		<typeAlias type="com.multi.www.barrierFree.BarrierFreeVO" alias="barrierfreeVO"></typeAlias>
-      	<typeAlias type="com.multi.www.barrierFree.BarrierFree2VO" alias="barrierfree2VO"></typeAlias>
-      	<typeAlias type="com.multi.www.barrierFree.BarrierFree4VO" alias="barrierfree4VO"></typeAlias>
-      	<typeAlias type="com.multi.www.barrierFree.PageVO" alias="pageVO2"></typeAlias>
+		<typeAlias type="com.multi.www.free.BarrierFreeVO" alias="barrierfreeVO"></typeAlias>
+      	<typeAlias type="com.multi.www.free.BarrierFree2VO" alias="barrierfree2VO"></typeAlias>
+      	<typeAlias type="com.multi.www.free.BarrierFree4VO" alias="barrierfree4VO"></typeAlias>
+      	<typeAlias type="com.multi.www.free.PageVO" alias="pageVO2"></typeAlias>
 	</typeAliases>
 	<mappers>
 		<!-- 혜림 -->

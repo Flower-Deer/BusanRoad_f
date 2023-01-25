@@ -8,6 +8,7 @@
 	
 	<!--  css -->
 	<link href="../resources/css/main.css" rel="stylesheet">
+	<link href="../resources/css/chatbot.css" rel="stylesheet">
 	
 	<!-- 폰트 -->
 	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,9 +38,9 @@ $(function(){
 			<div class="main-menu" style="font-size: 23px;">
 				<a href="../local/local.jsp" > 지역 별로 보기   &nbsp; &nbsp; </a>
 				<a href="../beach/beach.jsp" > 해수욕장  &nbsp; &nbsp;  </a>
-				<a href="#"> 무장애 여행   &nbsp; &nbsp;</a>
-				<a href="#"> 검색   &nbsp; &nbsp;</a>
-				<a href="#"> 혼잡도 알아보기 </a>
+				<a href="../free/page?page=1"> 무장애 여행   &nbsp; &nbsp;</a>
+				<a href="../search/main.jsp"> 검색   &nbsp; &nbsp;</a>
+				<a href="../confusion/confusion?id=1810011&lat=35.09846683706733&lng=129.03679919242902"> 혼잡도 알아보기 </a>
 			</div>
 		</div>	
 		
@@ -111,16 +112,16 @@ $(function(){
 >
 </div>
 
-<div size="300" class="chatbot_btn01">
+<div class="chatbot_btn01">
 		<div style="position: absolute; inset: 0px; margin: auto;">
 			<div class="chatbot_btn04">
 				<div class="chatbot_btn03">
 					<div class="chatbot_btn02">
-						<button
-							onclick="window.open('http://localhost:8888/www/chatbot/chatbot.jsp', 'window_name', 'width=430, height=500, location=no, status=no, scrollbars=yes');">
+						<a
+							onclick="window.open('http://localhost:8888/www/chatbot/chatbot.jsp', 'window_name', 'width=400, height=1000, location=no, status=no, scrollbars=yes');">
 							<img src=../resources/img/chatbot01.png width="48" height="48"
 								style="position: absolute; inset: 0px; margin: auto;">
-						</button>
+						</a>
 					</div>
 				</div>
 			</div>

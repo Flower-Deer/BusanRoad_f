@@ -1,22 +1,161 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<style type="text/css">
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	font-family: 'GmarketSansMedium';
+}
+
+li {
+	margin-left: 5px;
+}
+
+a:link {
+	color: black;
+	text-decoration: none;
+}
+
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+#lir {
+	margin-right: 70px;
+}
+
+.nav {
+	font-family: 'GmarketSansMedium';
+	font-size: 23px;
+	margin-right: 30px;
+}
+
+.himg {
+	width: 220px;
+	height: 100px;
+	margin-left: 70px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.intro {
+	background-color: #215BA3;
+	color: white;
+	padding-top: 150px;
+	padding-bottom: 100px;
+}
+
+.admin {
+	float: left;
+	background-position: bottom;
+}
+
+#bottom {
+	text-align: bottom;
+	/* width: 100vw;
+	height: 35vh; */
+	background: linear-gradient(#D3D3D3 67%, #A9A9A9 33%);
+	clear: both;
+}
+/* side-menu css */
+.side-menu {
+	font-family: 'GmarketSansMedium';
+	width: 280px;
+	float: left;
+	margin-right: 200px;
+	margin-left: 100px;
+	margin-top: 200px;
+	margin-bottom: 100px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 50px;
+	border: 1px solid black;
+	border-radius: 50px;
+}
+
+#local-li {
+	font-size: 18px;
+}
+/* input css */
+input {
+	height: 40px;
+	width: 100%;
+	margin: 20px auto;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	color: #315A9E;
+	background: white;
+	padding-left: 5px;
+	font-family: 'GmarketSansMedium';
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: inherit;
+}
+
+input:focus {
+	outline: none
+}
+
+::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+	color: #315A9E;
+	font-family: 맑은 고딕;
+}
+</style>
+
+<title>Insert title here</title>
+
+<jsp:include page="header.jsp"></jsp:include>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- Custom fonts for this template-->
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+	rel="stylesheet">
+<!-- Custom styles for this template-->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- css -->
+<link href="../resources/css/localEdit.css" rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- jquery -->
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-<title>Insert title here</title>
+
 <script>
 	$(function() {
 		$('#search_btn').click(function() {
 			$.ajax({
-				url : "localEditV/search2",
+				url : "localEditV/acco_search",
 				data : {
 					name : $("#name").val()
 				},
@@ -32,155 +171,125 @@
 </script>
 </head>
 <body>
+
 	<!-- 헤더 -->
-	<br>
-	<div class="container">
-		<header class="d-flex justify-content-center py-3">
-			<h1
-				style="color: #1E4FFF; font-family: 'SangSangFlowerRoad'; font-size: 50px;">
-				<a href="#">🕊️부산로드🕊️</a> &nbsp;&nbsp;&nbsp;
-			</h1>
-			<ul class="nav nav-pills">
-				<li class="nav-item"><a href="#" class="nav-link">지역별로 보기</a></li>
-				<li class="nav-item"><a href="../beach/beach.jsp"
-					class="nav-link">해수욕장</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">무장애 여행</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">검색</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">혼잡도 알아보기</a></li>
-			</ul>
-		</header>
-		<p style="text-align: right;">
-			<a href="#" class="nav-link">⚙️관리자</a>
-		</p>
+    <header class="d-flex flex-wrap align-items-center justify-content-md-between border-bottom">
+      	<a href="../main/main.jsp">
+			<img src=../resources/img/logo2.png class="himg" style="width: 220px; height: 100px;">
+		</a>
+		
+      	<ul class="nav col-12 col-md-auto mb-2 mb-md-0" >
+	        <li><a href="../local/local.jsp" class="nav-link px-2 link-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;지역별로 보기</a></li>
+	        <li><a href="../beach/beach.jsp" class="nav-link px-2 link-dark">&nbsp;&nbsp;해수욕장</a></li>
+	        <li><a href="../free/page?page=1" class="nav-link px-2 link-dark">&nbsp;&nbsp;무장애 여행</a></li>
+	        <li><a href="../search/main.jsp" class="nav-link px-2 link-dark">&nbsp;&nbsp;검색</a></li>
+	        <li><a href="../confusion/confusion?id=1810011&lat=35.09846683706733&lng=129.03679919242902" class="nav-link px-2 link-dark">&nbsp;&nbsp;혼잡도 알아보기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+     	</ul>
+    </header>
+
+	<!-- 페이지 별 소개 -->
+	<div class="intro" style="font-family: 'GmarketSansMedium';">
+		<h1 style="font-weight: 700; text-align: center;">숙박 조회, 수정, 삭제</h1>
+		<br>
 		<hr>
+		<br>
+		<h3 style="text-align: center;">숙박 명 조회후 수정, 삭제</h3>
+	</div>
 
-		<!-- 등록페이지 화면 -->
-		<div>
 
-			<!-- 관광지, 숙박시설, 음식점 선택 -->
-			<div style="height: 100px;">
-				<div class="alert alert-danger"
-					style="width: 100%; background-color: #b1c0bf; float: left; margin: 0px;">
-				</div>
-				<div
-					style="width: 33%; background-color: #b1c0bf; float: left; margin: 0px; top: 50%;">
-					<a href="#" onclick="location.href='localEdit_tour_c.jsp'">
-						<button class="text" style="width: 100%">관광지</button>
-					</a>
-				</div>
-				<div
-					style="width: 34%; background-color: #b1c0bf; float: left; margin: 0px;">
-					<a href="#" onclick="location.href='localEdit_acco_c.jsp'">
-						<button class="text" style="width: 100%">숙박시설</button>
-					</a>
-				</div>
-				<div
-					style="width: 33%; background-color: #b1c0bf; float: left; margin: 0px;">
-					<a href="#" onclick="location.href='localEdit_rest_c.jsp'">
-						<button class="text" style="width: 100%">음식점</button>
-					</a>
-				</div>
-				<div class="alert alert-danger"
-					style="width: 100%; background-color: #b1c0bf; float: left; margin: 0px;">
-				</div>
-			</div>
-			<br>
-			<!-- 관광지 등록 조회 폼 -->
-			<div>
-				<!-- 등록, 조회 선택 -->
-				<div>
-					<div>
-						<a href="#" onclick="location.href='localEdit_acco_c.jsp'"><button>등록</button></a>
-					</div>
-					<div>
-						<a href="#" onclick="location.href='localEdit_acco_s.jsp'"><button>조회</button></a>
-					</div>
-				</div>
-				<div>
-					<p>숙박시설 정보 등록하는 페이지 입니다</p>
-					<form action="localEditV/insert">
-						<table style="width: 1050px; font-size: 20px;">
-							<tr style="height: 50px;">
-								<td align="center" style="width: 342px;">이름</td>
-								<td align="left"><input
-									style="width: 600px; font-size: 15px;" type="text" id="name"
-									name="name"></td>
-							</tr>
-							<tr style="height: 50px;">
-								<td align="center">주소</td>
-								<td align="left"><input
-									style="width: 600px; font-size: 15px;" type="text" id="address"
-									name="address"></td>
-							</tr>
-							<!-- <tr style="height: 50px;">
-								<td align="center">위도</td>
-								<td align="left"><input
-									style="width: 600px; font-size: 15px;" type="text"
-									id="latitude" name="latitude"></td>
-							</tr>
-							<tr style="height: 50px;">
-								<td align="center">경도</td>
-								<td align="left"><input
-									style="width: 600px; font-size: 15px;" type="text"
-									id="longtitude" name="longtitude"></td>
-							</tr> -->
-							<tr style="height: 50px;">
-								<td align="center">체크인</td>
-								<td align="left"><input
-									style="width: 600px; font-size: 15px;" type="text" id="checkin"
-									name="checkin">
-							</tr>
-							<tr style="height: 50px;">
-								<td align="center">체크아웃</td>
-								<td align="left"><input
-									style="width: 600px; font-size: 15px;" type="text" id="checkout"
-									name="checkout"></td>
-							</tr>
-							<tr style="height: 50px;">
-								<td align="center">주차시설</td>
-								<td align="left"><input
-									style="width: 600px; font-size: 15px;" type="text" id="park"
-									name="park"></td>
-							</tr>
-							<tr style="height: 50px;">
-								<td align="center">카테고리</td>
-								<td align="left"><input
-									style="width: 600px; font-size: 15px;" type="text"
-									id="category" name="category"></td>
-							</tr>
-							<tr style="height: 50px;">
-								<td align="center">부대시설</td>
-								<td align="left"><input
-									style="width: 600px; font-size: 15px;" type="text"
-									id="etc" name="etc"></td>
-							</tr>
-							<tr style="height: 50px;">
-								<td align="center">웹사이트</td>
-								<td align="left"><input
-									style="width: 600px; font-size: 15px;" type="text"
-									id="website" name="website"></td>
-							</tr>
-							<tr style="height: 50px;">
-								<td align="center">이미지</td>
-								<td align="left"><input
-									style="width: 600px; font-size: 15px;" id="img" name="img"
-									type="file" multiple="multiple"></td>
-							</tr>
-							<tr align="right">
-								<td colspan="2">
-									<button type="submit"
-										onclick="javascript: form.action='localEditV/update2';">수정</button>
+	<!-- 사이드 메뉴 -->
+	<div class="side-menu">
 
-									<button type="submit"
-										onclick="javascript: form.action='localEditV/delete2';">삭제</button>
-									<button type="reset">취소</button>
-								</td>
-							</tr>
-						</table>
-					</form>
-				</div>
-			</div>
+		<b style="color: black; font-size: 24px;">관리자 페이지</b>
+		<hr style="color: black;">
+
+		<ul class="list-unstyled ps-0">
+
+			<li class="mb-4">
+				<button id="local-li"
+					class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+					aria-expanded="true" onclick="location.href='localEdit_tour_c.jsp'">
+					관광지 등록</button>
+				<hr style="border-style: dashed;">
+			</li>
+
+			<li class="mb-4">
+				<button id="local-li"
+					class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+					aria-expanded="true" onclick="location.href='localEdit_tour_s.jsp'">
+					관광지 조회</button>
+				<hr style="border-style: dashed;">
+			</li>
+
+			<li class="mb-4">
+				<button id="local-li"
+					class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+					aria-expanded="true" onclick="location.href='localEdit_rest_c.jsp'">
+					음식점 등록</button>
+				<hr style="border-style: dashed;">
+			</li>
+
+			<li class="mb-4">
+				<button id="local-li"
+					class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+					aria-expanded="true" onclick="location.href='localEdit_rest_s.jsp'">
+					음식점 조회</button>
+				<hr style="border-style: dashed;">
+			</li>
+
+			<li class="mb-4">
+				<button id="local-li"
+					class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+					aria-expanded="true" onclick="location.href='localEdit_acco_c.jsp'">
+					숙박 등록</button>
+				<hr style="border-style: dashed;">
+			</li>
+
+			<li class="mb-4">
+				<button id="local-li"
+					class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+					aria-expanded="true" onclick="location.href='localEdit_acco_s.jsp'">
+					숙박 조회</button>
+				<hr style="border-style: dashed;">
+			</li>
+
+		</ul>
+	</div>
+	<!-- 숙박 조회 폼 -->
+	<div
+		style="font-family: 'GmarketSansMedium'; margin-top: 100px; width: 900px; float: left;">
+		<div style="float: right; margin-top: 120px;">
+			<form>
+				<table>
+					<tr>
+						<td><input style="width: 700px; font-size: 15px;" type="text"
+							name="name" id="name" placeholder="조회할 숙박 명을 입력하시오."
+							class="search_input">
+							<button type="button" id="search_btn"
+								class="btn btn-outline-dark">검색</button></td>
+					</tr>
+				</table>
+			</form>
+			<div id="search_div"></div>
 		</div>
 	</div>
+
+	<!-- Bottom -->
+	<div id="bottom">
+		<div class="container">
+			<br>
+			<h5>BusanRoad</h5>
+			<p>
+				&lt;정보제공&gt;<br> 지도 : KakaoMap, TMap <br> 여행지 정보 : 한국관광공사<br>
+				혼잡도 정보 : SK<br> <br>Tel(문의처) : 010.8873.1998
+			</p>
+			<hr>
+			<P>(주)MutliCampus_Project</P>
+			<a href="chk.jsp" class="admin">관리자</a>
+			<p class="admin">&nbsp;: 홍혜림,한희정,이창명,장재일,정유진</p>
+		</div>
+		<br> <br>
+	</div>
 </body>
+
 </html>

@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+.chatbot_btn01 {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	width: 300px;
+	height: 300px;
+	background: radial-gradient(at right bottom, rgba(0, 0, 0, 0.04) 0%,
+		rgba(0, 0, 0, 0) 72%);
+	animation: 0.5s ease-out 0s 1 normal none running jBcSpD;
+}
+
+.chatbot_btn02 {
+	position: relative;
+	box-sizing: border-box;
+	flex-wrap: nowrap;
+	width: 60px;
+	height: 60px;
+	overflow: initial;
+	cursor: pointer;
+	box-shadow: rgb(255 255 255/ 12%) 0px 0px 2px 0px inset, rgb(0 0 0/ 5%)
+		0px 0px 2px 1px, rgb(0 0 0/ 22%) 0px 4px 20px;
+	backdrop-filter: blur(30px);
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 26px;
+	transition: box-shadow 0.2s ease-out 0s;
+	animation: 0.2s cubic-bezier(0.1, 0, 0.6, 1) 0.35s 1 normal backwards
+		running fcEaNs;
+	border-radius: 26px;
+}
+
+.chatbot_btn03 {
+	position: relative;
+	overflow: visible;
+}
+
+.chatbot_btn04 {
+	position: fixed;
+	z-index: 10000000;
+	display: block;
+	flex-wrap: nowrap;
+	width: auto;
+	overflow: visible;
+	background: transparent;
+	bottom: 30px;
+	right: 30px;
+}

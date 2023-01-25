@@ -7,6 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- 챗봇 -->
+<link href="../resources/css/chatbot.css" rel="stylesheet">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script
@@ -129,11 +131,11 @@ font-size: 18px;
 			<img src=../resources/img/logo2.png class="himg">
 		</a>
 		
-      	<ul class="nav col-12 col-md-auto mb-2 mb-md-0" >
+      		<ul class="nav col-12 col-md-auto mb-2 mb-md-0" >
 	        <li><a href="../local/local.jsp" class="nav-link px-2 link-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;지역별로 보기</a></li>
 	        <li><a href="../beach/beach.jsp" class="nav-link px-2 link-dark">&nbsp;&nbsp;해수욕장</a></li>
-	        <li><a href="../barrierFree/barrierFreePage?page=1" class="nav-link px-2 link-dark">&nbsp;&nbsp;무장애 여행</a></li>
-	        <li><a href="#" class="nav-link px-2 link-dark">&nbsp;&nbsp;검색</a></li>
+	        <li><a href="../free/page?page=1" class="nav-link px-2 link-dark">&nbsp;&nbsp;무장애 여행</a></li>
+	        <li><a href="../search/main.jsp" class="nav-link px-2 link-dark">&nbsp;&nbsp;검색</a></li>
 	        <li><a href="../confusion/confusion?id=1810011&lat=35.09846683706733&lng=129.03679919242902" class="nav-link px-2 link-dark">&nbsp;&nbsp;혼잡도 알아보기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
      	</ul>
     </header>
@@ -195,6 +197,21 @@ font-size: 18px;
 	</table>
 	<br>
 	
+	<!-- 챗봇 -->
+<div class="chatbot_btn01">
+	<div style="position: absolute; inset: 0px; margin: auto;">
+		<div class="chatbot_btn04">
+			<div class="chatbot_btn03">
+            	<div class="chatbot_btn02">
+					<a onclick="window.open('http://localhost:8888/www/chatbot/chatbot.jsp', 'window_name', 'width=400, height=1000, location=no, status=no, scrollbars=yes');">
+						<img src=../resources/img/chatbot01.png width="48" height="48" style="position: absolute; inset: 0px; margin: auto;">
+                    </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 	 <!-- Bottom -->
 	<div id="bottom">
 		<div class="container">

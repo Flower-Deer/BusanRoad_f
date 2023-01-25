@@ -77,7 +77,8 @@ font-family: 'GmarketSansMedium';
 font-size: 18px;
 }
 </style>
-    
+    <!-- 챗봇 -->
+<link href="../resources/css/chatbot.css" rel="stylesheet">
 	<title>Insert title here</title>
 	<jsp:include page="header.jsp"></jsp:include>
 	<link
@@ -165,14 +166,14 @@ font-size: 18px;
 <!-- 헤더 -->
     <header class="d-flex flex-wrap align-items-center justify-content-md-between border-bottom">
       	<a href="../main/main.jsp">
-			<img src=../resources/img/logo2.png class="himg">
+			<img src=../resources/img/logo2.png class="himg" style="width: 220px; height: 100px;">
 		</a>
 		
       	<ul class="nav col-12 col-md-auto mb-2 mb-md-0" >
 	        <li><a href="local.jsp" class="nav-link px-2 link-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;지역별로 보기</a></li>
 	        <li><a href="../beach/beach.jsp" class="nav-link px-2 link-dark">&nbsp;&nbsp;해수욕장</a></li>
-	        <li><a href="#" class="nav-link px-2 link-dark">&nbsp;&nbsp;무장애 여행</a></li>
-	        <li><a href="#" class="nav-link px-2 link-dark">&nbsp;&nbsp;검색</a></li>
+	        <li><a href="../free/page?page=1" class="nav-link px-2 link-dark">&nbsp;&nbsp;무장애 여행</a></li>
+	        <li><a href="../search/main.jsp" class="nav-link px-2 link-dark">&nbsp;&nbsp;검색</a></li>
 	        <li><a href="../confusion/confusion?id=1810011&lat=35.09846683706733&lng=129.03679919242902" class="nav-link px-2 link-dark">&nbsp;&nbsp;혼잡도 알아보기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
      	</ul>
     </header>
@@ -185,7 +186,21 @@ font-size: 18px;
 		<br>
 		<h3>부산의 구 별 관광지를 살펴보자<br> <br>원하는 장소를 찾는 가장 좋은 방법</h3>		
 	</div> 
-		
+
+<!-- 챗봇 -->
+<div class="chatbot_btn01">
+	<div style="position: absolute; inset: 0px; margin: auto;">
+		<div class="chatbot_btn04">
+			<div class="chatbot_btn03">
+            	<div class="chatbot_btn02">
+					<a onclick="window.open('http://localhost:8888/www/chatbot/chatbot.jsp', 'window_name', 'width=400, height=1000, location=no, status=no, scrollbars=yes');">
+						<img src=../resources/img/chatbot01.png width="48" height="48" style="position: absolute; inset: 0px; margin: auto;">
+                    </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
 	 
 <!-- 사이드 메뉴 -->
 	<div class="side-menu">
@@ -299,7 +314,7 @@ font-size: 18px;
 			<br>Tel(문의처) : 010.8873.1998</p>
 			<hr>
 			<P>(주)MutliCampus_Project</P>
-			<a href="#" class="admin">관리자</a>
+			<a href="../localEdit/chk.jsp" class="admin">관리자</a>
 			<p class="admin">&nbsp;: 홍혜림,한희정,이창명,장재일,정유진</p>
 		</div>
 		<br><br>

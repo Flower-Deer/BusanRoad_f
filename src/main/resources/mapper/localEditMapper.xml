@@ -11,14 +11,12 @@
 		#{off}, #{park}, #{name},
 		#{img2}, #{img3}, #{link1}, #{link2}, #{link3})
 	</insert>
-	
+
 	<select id="one1" parameterType="local_touristdestinationVO"
 		resultType="local_touristdestinationVO">
-		select num,
-		name, address from touristdestination where name
-		= #{name}
+		select * from touristdestination where name = #{name}
 	</select>
-	
+
 	<update id="update1" parameterType="local_touristdestinationVO">
 		update touristdestination
 		set
@@ -28,16 +26,17 @@
 		#{content}, off =
 		#{off},
 		park =
-		#{park}, name = #{name}
+		#{park}, name = #{name}, img2 = #{img2}, img3 = #{img3}, link1 =
+		#{link1}, link2 = #{link2}, link3 = #{link3}
 		where num = #{num}
 	</update>
-	
+
 	<delete id="delete1" parameterType="local_touristdestinationVO">
 		delete from
 		touristdestination
 		where num = #{num}
 	</delete>
-	
+
 	<!-- 음식점 -->
 	<insert id="insert2" parameterType="local_restaurantVO">
 		insert into restaurant
@@ -47,33 +46,36 @@
 		#{off}, #{time}, #{park}, #{menu}, #{name}, #{img2}, #{img3},
 		#{link1}, #{link2}, #{link3})
 	</insert>
-	
+
 	<select id="one2" parameterType="local_restaurantVO"
 		resultType="local_restaurantVO">
 		select num,
 		name, address from restaurant where name =
 		#{name}
 	</select>
-	
+
 	<update id="update2" parameterType="local_restaurantVO">
 		update restaurant
 		set
 		img = #{img}, address = #{address},<!-- latitude = 
 			#{latitude}, longtitude = #{longtitude}, -->
-		category = #{category}, content =
-		#{content}, off =
+		category = #{category}, off =
 		#{off}, time =
-		#{time}, park = #{park}, menu = #{menu}, name = #{name}
+		#{time}, park = #{park},
+		menu = #{menu}, name = #{name}, img2 =
+		#{img2}, img3 = #{img3}, link1 =
+		#{link1}, link2 = #{link2}, link3 =
+		#{link3}
 		where num =
 		#{num}
 	</update>
-	
+
 	<delete id="delete2" parameterType="local_restaurantVO">
 		delete from restaurant
 		where
 		num = #{num}
 	</delete>
-	
+
 	<!-- 숙박 -->
 	<insert id="insert3" parameterType="local_accommodationVO">
 		insert into accommodation
@@ -82,13 +84,14 @@
 		#{checkout}, #{park}, #{etc}, #{website},
 		#{name}, #{img2}, #{img3}, #{link1}, #{link2}, #{link3})
 	</insert>
-	
+
 	<select id="one3" parameterType="local_accommodationVO"
 		resultType="local_accommodationVO">
 		select num, name, address from
-		accommodation where name = #{name}
+		accommodation where name =
+		#{name}
 	</select>
-	
+
 	<update id="update3" parameterType="local_accommodationVO">
 		update accommodation
 		set
@@ -97,10 +100,12 @@
 		#{checkin}, checkout =
 		#{checkout},
 		park = #{park}, etc = #{etc},
-		website = #{website}, name = #{name}
+		website = #{website}, name = #{name}, img2 = #{img2}, img3 = #{img3},
+		link1 =
+		#{link1}, link2 = #{link2}, link3 = #{link3}
 		where num = #{num}
 	</update>
-	
+
 	<delete id="delete3" parameterType="local_accommodationVO">
 		delete from accommodation
 		where num = #{num}
