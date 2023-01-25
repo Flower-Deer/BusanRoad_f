@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<!-- 혜림 희정 -->
+		<typeAlias alias="local_touristdestinationVO" type="com.multi.www.local.Local_touristdestinationVO"/>
+		<typeAlias alias="local_restaurantVO" type="com.multi.www.local.Local_restaurantVO"/>
+		<typeAlias alias="local_accommodationVO" type="com.multi.www.local.Local_accommodationVO"/>
+		<typeAlias alias="pageVO" type="com.multi.www.local.PageVO"/>
+		<!-- 유진 -->
+		<typeAlias type="com.multi.www.beach.BeachVO" alias="beachVO"/>
+		<typeAlias type="com.multi.www.beach.GuestVO" alias="guestVO"/>
+		<!-- 창명 -->
+		<typeAlias type="com.multi.www.openAPIXMLtoJSON.TourVO" alias="tourVO"/>
+		<!-- 재일 -->
+		<typeAlias type="com.multi.www.barrierFree.BarrierFreeVO" alias="barrierfreeVO"></typeAlias>
+      	<typeAlias type="com.multi.www.barrierFree.BarrierFree2VO" alias="barrierfree2VO"></typeAlias>
+      	<typeAlias type="com.multi.www.barrierFree.BarrierFree4VO" alias="barrierfree4VO"></typeAlias>
+      	<typeAlias type="com.multi.www.barrierFree.PageVO" alias="pageVO2"></typeAlias>
+	</typeAliases>
+	<mappers>
+		<!-- 혜림 -->
+		<mapper resource="mapper/localMapper.xml"/>
+		<!-- 희정 -->
+		<mapper resource="mapper/localEditMapper.xml"/>
+		<!-- 유진 -->
+		<mapper resource="mapper/beachMapper.xml"/>
+		<mapper resource="mapper/guestMapper.xml"/>
+		<!-- 창명 -->
+		<mapper resource="mapper/searchMapper.xml"/>
+		<!-- 재일 -->
+		<mapper resource="mapper/barrierFreeMapper.xml" />
+	</mappers>
+</configuration>

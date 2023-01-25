@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="barrierFree">
+<!-- 	<select id="accommodationSearch" parameterType="barrierfreeVO" resultType="barrierfreeVO">
+		select * from busan where name = #{name}
+	</select> -->
+	<select id="one" parameterType="barrierfree2VO" resultType="barrierfree2VO">
+		select * from barrierfree where contentid = #{contentid}
+	</select>
+	<select id="oneimg" parameterType="barrierfree2VO" resultType="barrierfreeVO">
+		select firstimage from busan where contentid = #{contentid}
+	</select>
+	<select id="oneoverview" parameterType="barrierfree2VO" resultType="barrierfree4VO">
+		select overview from busandetail where contentid = #{contentid}
+	</select>
+	<insert id="addfree"  parameterType="barrierfreeVO">
+		insert into busan value (#{addr1}, #{mapx}, #{mapy}, #{title},#{contentid},#{firstimage})
+	</insert>
+	
+	<insert id="addfree2"  parameterType="barrierfree2VO">
+		insert into barrierfree value (#{contentid},#{parking},#{route},#{publictransport},#{ticketoffice},#{promotion},#{wheelchair},#{exit},#{elevator},#{restroom},#{auditorium},#{room},#{handicapetc},#{braileblock},#{helpdog},#{guidehuman},#{audioguide},#{bigprint},#{brailepromotion},#{guidesystem},#{blindhandicapetc},#{signguide},#{videoguide},#{hearingroom},#{hearinghandicapetc},#{stroller},#{lactationroom},#{babysparechair},#{infantsfamilyetc})
+	</insert>
+	
+	<insert id="addfree4"  parameterType="barrierfree4VO">
+		insert into busandetail value (#{contentid},#{contenttypeid},#{title},#{homepage},#{overview})
+	</insert>
+	
+	<select id="search" resultType="barrierfreeVO">
+		select b2.contentid, b2.firstimage, b2.title
+		from barrierfree b, busan b2
+		where	b2.contentid = b.contentid and
+				parking !=  "" and elevator !=  ""
+		limit 5
+		
+	</select>
+	<select id="search2" resultType="barrierfreeVO">
+		select b2.contentid, b2.firstimage, b2.title
+		from barrierfree b, busan b2
+		where	b2.contentid = b.contentid and 
+				parking !=  "" and elevator !=  "" and braileblock !=  ""
+		limit 5
+	</select>
+	
+	
+	<select id="count" resultType="Integer">
+		select count(*) from busan
+	</select>
+	
+
+	
+	<select id = "contentid" resultType="barrierFreeVO">
+	select contentid from busan
+	</select>
+	
+	<select id="all" 
+			parameterType="pageVO"
+			resultType="barrierfreeVO">
+		select * from (
+			select
+				row_number() over(order by bbs_no desc) as bbs_no2,
+				b.*
+			from busan b) b2
+		where b2.bbs_no2 between #{start} and #{end}
+	</select>
+	
+</mapper>
