@@ -346,7 +346,7 @@ input:focus {
 			</p>
 			<hr>
 			<P>(주)MutliCampus_Project</P>
-			<a href="#" class="admin">관리자</a>
+			<a href="../localEdit/chk.jsp" class="admin">관리자</a>
 			<p class="admin">&nbsp;: 홍혜림,한희정,이창명,장재일,정유진</p>
 		</div>
 		<br> <br>

@@ -96,6 +96,31 @@ a:visited {
 #local-li {
 	font-size: 18px;
 }
+
+input {
+	height: 40px;
+	width: 100%;
+	margin: 20px auto;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	color: #315A9E;
+	background: white;
+	padding-left: 5px;
+	font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: inherit;
+}
+
+input:focus {
+	outline: none
+}
+
+::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+	color: #315A9E;
+	font-family: 맑은 고딕;
 </style>
 
 <title>Insert title here</title>
@@ -321,7 +346,7 @@ a:visited {
 			</p>
 			<hr>
 			<P>(주)MutliCampus_Project</P>
-			<a href="#" class="admin">관리자</a>
+			<a href="../localEdit/chk.jsp" class="admin">관리자</a>
 			<p class="admin">&nbsp;: 홍혜림,한희정,이창명,장재일,정유진</p>
 		</div>
 		<br> <br>
