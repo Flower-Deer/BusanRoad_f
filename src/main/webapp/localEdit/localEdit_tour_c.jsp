@@ -286,22 +286,22 @@ input:focus {
 					</tr>
 					<tr style="height: 50px;">
 						<td align="left">카테고리</td>
-						<td><input style="width: 600px; font-size: 15px;" type="text"
+						<td align="left"><input style="width: 600px; font-size: 15px;" type="text"
 							id="category" name="category"></td>
 					</tr>
 					<tr style="height: 50px;">
 						<td align="left">링크1</td>
-						<td><input style="width: 600px; font-size: 15px;" type="text"
+						<td align="left"><input style="width: 600px; font-size: 15px;" type="text"
 							id="link1" name="link1"></td>
 					</tr>
 					<tr style="height: 50px;">
 						<td align="left">링크2</td>
-						<td><input style="width: 600px; font-size: 15px;" type="text"
+						<td align="left"><input style="width: 600px; font-size: 15px;" type="text"
 							id="link2" name="link2"></td>
 					</tr>
 					<tr style="height: 50px;">
 						<td align="left">링크3</td>
-						<td><input style="width: 600px; font-size: 15px;" type="text"
+						<td align="left"><input style="width: 600px; font-size: 15px;" type="text"
 							id="link3" name="link3"></td>
 					</tr>
 					<tr style="height: 50px;">
