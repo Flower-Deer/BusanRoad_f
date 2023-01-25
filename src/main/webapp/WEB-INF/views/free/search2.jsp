@@ -19,8 +19,50 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"
 	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
+<script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".b1").on("click", function() {
+			pageNo = $(this).attr("pageNo");
+			$.ajax({
+				url : "barrierFreePage2",
+				data : {
+					page : pageNo
 
-<style>
+				},
+				success : function(x) {
+					$("#result").html(x);
+				}
+			})
+		}); //b1
+		$(".b2").click(function() {
+			alert("test")
+			pageNo = $(this).attr("pageNo");
+			$.ajax({
+				url : "barrierFreePage2",
+				data : {
+					page : pageNo
+
+				},
+				success : function(x) {
+					$(".row").html("test");
+				}
+			})
+		});
+	})
+</script>
+<style type="text/css">
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 .card {
 	width: 270px;
 	height: 300px;
@@ -31,100 +73,189 @@
 	width: 268px;
 	height: 200px;
 }
-img{
-width: 268px;
+
+img {
+	width: 268px;
 	height: 200px;
 }
-.table{
-	width:900px;
+
+.table {
+	width: 900px;
 }
-.b2{
-	min-width:70px;
+
+.b2 {
+	min-width: 70px;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	font-family: 'GmarketSansMedium';
+}
+
+.btn {
+	font-family: 'GmarketSansMedium';
+}
+
+li {
+	margin-left: 5px;
+}
+
+a:link {
+	color: black;
+	text-decoration: none;
+}
+
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+#lir {
+	margin-right: 70px;
+}
+
+.nav {
+	font-family: 'GmarketSansMedium';
+	font-size: 23px;
+	margin-right: 30px;
+}
+
+.himg {
+	width: 220px;
+	height: 100px;
+	margin-left: 70px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.intro {
+	background-color: #215BA3;
+	color: white;
+	padding-top: 150px;
+	padding-bottom: 100px;
+}
+
+.admin {
+	float: left;
+	background-position: bottom;
+}
+
+#bottom {
+	text-align: bottom;
+	/* width: 100vw;
+	height: 35vh; */
+	background: linear-gradient(#D3D3D3 67%, #A9A9A9 33%);
+	clear: both;
+}
+/* local 메인 페이지 한정 css */
+.side-menu {
+	font-family: 'GmarketSansMedium';
+	width: 280px;
+	float: left;
+	margin-right: 100px;
+	margin-left: 100px;
+	margin-top: 200px;
+	margin-bottom: 100px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 50px;
+	border: 1px solid black;
+	border-radius: 50px;
+}
+
+#local-li {
+	font-size: 18px;
 }
 </style>
+<link href="resources/css/all.css" rel="stylesheet">
 </head>
 <body>
 
 	<!-- 헤더 -->
-	<div class="container">
-		<header class="d-flex justify-content-center py-3">
-			<h1 style="color: #1E4FFF;">🕊부산로드🕊 &nbsp;&nbsp;&nbsp;</h1>
-			<ul class="nav nav-pills">
-				<li class="nav-item"><a href="#" class="nav-link">지역별로 보기</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">해수욕장</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">무장애 여행</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">검색</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">혼잡도 알아보기</a></li>
-			</ul>
-		</header>
+	<header
+		class="d-flex flex-wrap align-items-center justify-content-md-between border-bottom">
+		<a href="../main/main.jsp"> <img src="resources/img/logo2.png" alt="logo2.png"
+			class="himg">
 
-		<hr>
-		<!-- 사이드바 -->
-		<div class="row">
-			<div class="col-md-3 col-lg-4 ">
-				<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-					<a href="/"
-						class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-						<svg class="bi pe-none me-2" width="30" height="24">
-							<use xlink:href="#bootstrap"></use></svg> <span
-						class="fs-5 fw-semibold">무장애 여행</span>
-					</a>
-					<ul class="list-unstyled ps-0">
-						<li class="mb-1">
-							<button
-								class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-								data-bs-toggle="collapse" data-bs-target="#home-collapse"
-								aria-expanded="true">주제별</button>
-							<div class="collapse" id="home-collapse">
-								<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-									<li><a href="#"
-										class="link-dark d-inline-flex text-decoration-none rounded">노인</a></li>
-									<li><a href="#"
-										class="link-dark d-inline-flex text-decoration-none rounded">영유아</a></li>
-									<li><a href="#"
-										class="link-dark d-inline-flex text-decoration-none rounded">장애인</a></li>
-								</ul>
-							</div>
-						</li>
+		</a>
 
-						<li class="border-top my-3"></li>
+		<ul class="nav col-12 col-md-auto mb-2 mb-md-0" >
+	        <li><a href="../local/local.jsp" class="nav-link px-2 link-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;지역별로 보기</a></li>
+	        <li><a href="../beach/beach.jsp" class="nav-link px-2 link-dark">&nbsp;&nbsp;해수욕장</a></li>
+	        <li><a href="page?page=1" class="nav-link px-2 link-dark">&nbsp;&nbsp;무장애 여행</a></li>
+	        <li><a href="../search/main.jsp" class="nav-link px-2 link-dark">&nbsp;&nbsp;검색</a></li>
+	        <li><a href="../confusion/confusion?id=1810011&lat=35.09846683706733&lng=129.03679919242902" class="nav-link px-2 link-dark">&nbsp;&nbsp;혼잡도 알아보기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+     	</ul>
+	</header>
+	<hr>
+	<!-- 페이지 별 소개 -->
+	<div class="main">
+		<div class="intro" style="font-family: 'GmarketSansMedium';">
+			<h1 style="font-weight: 700;">부산 무장애여행</h1>
+			<br>
+			<hr>
+			<br>
+			<h3>
+				어르신 어린이 장애인 모두<br> <br>편안하고 안전한 부산여행을 위해
+			</h3>
+		</div>
 
-					</ul>
-				</div>
+		<div class="container">
+
+
+			<div style="padding-left: 450px; padding-top: 15px;">
+				<a href="search"><button type="button" class="btn btn-secondary">주차장+엘리베이터</button></a> 
+				<a href="search2"><button type="button" class="btn btn-secondary">주차장+엘리베이터+점자블록</button></a>
 			</div>
 
-					
-			<div class="col-md-9 col-lg-8 ">
-				<div class="row row-cols-1 row-cols-md-3 g-3"
-					style="text-align: center; padding-top: 20px;">
-					<div id ="result">
-						<table class="table">
-							<tr>
-								<td>사진</td>
-								<td>제목</td>
-								<td>번호</td>
-								<td>이동</td>
-							</tr>
-							<c:forEach var="vo" items="${list}">
-								<tr>
-									<td><img src =${vo.firstimage}></td>
-									<td>${vo.title}</td>
-									<td>${vo.contentid}</td>
-									<td>
-										<a href="barrierFreeDetail?contentid=${vo.contentid}">
-											<button class="b2" type="button" class="btn btn-primary btn-sm">자세히</button>
-										</a>
-									</td>
-								</tr>
-							</c:forEach>
-						</table>
+			<div class="container"
+				style="content-align: center; text-align: center; margin-left: 100px; padding-top: 20px;">
+				<div id="result">
+
+
+					<!-- 카드 -->
+					<div style="margin-top: 30px; float: left;">
+						<c:forEach var="vo" items="${list}">
+							<div class="local-object"
+								style="float: left; height: 330px; width: 400px; margin-top: 30px;">
+								<div class="card h-100">
+									<img class="thumbnail" src=${vo.firstimage } alt="..." />
+									<div class="text-center" style="margin-top: 5px;">
+										<h5 class="fw-bolder">${vo.title}</h5>
+										<br> <a class="btn btn-outline-dark mt-auto"
+											href="barrierFreeDetail?contentid=${vo.contentid}">상세보기</a>
+									</div>
+								</div>
+							</div>
+						</c:forEach>
 					</div>
+
 
 
 				</div>
 				
 			</div>
+
 		</div>
-	</div>	
+	</div>
+ <!-- Bottom -->
+	<div id="bottom">
+		<div class="container">
+			<br>
+			<h5>BusanRoad</h5>
+			<p>&lt;정보제공&gt;<br>
+			지도 : KakaoMap, TMap <br>
+			여행지 정보 : 한국관광공사<br>
+			혼잡도 정보 : SK<br>
+			<br>Tel(문의처) : 010.8873.1998</p>
+			<hr>
+			<P>(주)MutliCampus_Project</P>
+			<a href="#" class="admin">관리자</a>
+			<p class="admin">&nbsp;: 홍혜림,한희정,이창명,장재일,정유진</p>
+		</div>
+		<br><br>
+	</div>
+
 </body>
 </html>

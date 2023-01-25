@@ -22,7 +22,7 @@ public class LocalController {
 	Local_accommodationInter dao3;
 	
 	@Autowired
-	PageService page;
+	PageService2 page;
 	
 	//관광지
 	@RequestMapping("local/listdestination")

@@ -1,18 +1,19 @@
-package com.multi.www.free;
+package com.multi.www.local;
 
 import org.springframework.stereotype.Service;
 
-@Service //�̱���
+@Service //싱글톤
 public class PageService2 {
 
 	public int pages(int count) {
 		int pages = 0;
 		if(count % 10 == 0) {
-			pages = count / 10; //120�� --> 12pages
+			pages = count / 12; //120개 --> 12pages
 		}else {
-			pages = count / 10 + 1; //122�� --> 13pages 
+			pages = count / 12 + 1; //122개 --> 13pages 
 		}
 		return pages;
 	}
 	
 }
+

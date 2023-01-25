@@ -28,9 +28,15 @@ public class BarrierFreeDAO {
 	public BarrierFree2VO one(BarrierFree2VO vo) {
 		return my.selectOne("barrierFree.one",vo);
 	}
+	
+	public BarrierFreeVO onetitle(BarrierFree2VO vo) {
+		return my.selectOne("barrierFree.onetitle",vo);
+	}
+	
 	public BarrierFreeVO oneimg(BarrierFree2VO vo) {
 		return my.selectOne("barrierFree.oneimg",vo);
 	}
+	
 	public BarrierFree4VO oneoverview(BarrierFree2VO vo) {
 		return my.selectOne("barrierFree.oneoverview",vo);
 	}

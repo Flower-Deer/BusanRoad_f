@@ -2,34 +2,39 @@ package com.multi.www.free;
 
 public class BarrierFree2VO {
 	String contentid;
-	String parking = "없음";
-	String route = "없음";
-	String publictransport = "없음";
-	String ticketoffice = "없음";
-	String promotion = "없음";
-	String wheelchair = "없음";
-	String exit = "없음";
-	String elevator = "없음";
-	String restroom = "없음";
-	String auditorium = "없음";
-	String room = "없음";
-	String handicapetc = "없음";
-	String braileblock = "없음";
-	String helpdog = "없음";
-	String guidehuman = "없음";
-	String audioguide = "없음";
-	String bigprint = "없음";
-	String brailepromotion = "없음";
-	String guidesystem = "없음";
-	String blindhandicapetc = "없음";
-	String signguide = "없음";
-	String videoguide = "없음";
-	String hearingroom = "없음";
-	String hearinghandicapetc = "없음";
-	String stroller = "없음";
-	String lactationroom = "없음";
-	String babysparechair = "없음";
-	String infantsfamilyetc = "없음";
+	String parking = "����";
+	String route = "����";
+	String publictransport = "����";
+	String ticketoffice = "����";
+	
+	String promotion = "����";
+	String wheelchair = "����";
+	String exit = "����";
+	String elevator = "����";
+	String restroom = "����";
+	
+	String auditorium = "����";
+	String room = "����";
+	String handicapetc = "����";
+	String braileblock = "����";
+	String helpdog = "����";
+	
+	String guidehuman = "����";
+	String audioguide = "����";
+	String bigprint = "����";
+	String brailepromotion = "����";
+	String guidesystem = "����";
+	
+	String blindhandicapetc = "����";
+	String signguide = "����";
+	String videoguide = "����";
+	String hearingroom = "����";
+	String hearinghandicapetc = "����";
+	
+	String stroller = "����";
+	String lactationroom = "����";
+	String babysparechair = "����";
+	String infantsfamilyetc = "����";
 
 	public BarrierFree2VO(String contentid, String parking, String route, String publictransport, String ticketoffice,
 			String promotion, String wheelchair, String exit, String elevator, String restroom, String auditorium,

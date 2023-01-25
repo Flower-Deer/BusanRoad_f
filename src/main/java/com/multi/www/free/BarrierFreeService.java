@@ -32,6 +32,11 @@ public class BarrierFreeService {
 	public BarrierFree2VO one(BarrierFree2VO vo) {
 		return dao.one(vo);
 	}
+	
+	public BarrierFreeVO onetitle(BarrierFree2VO vo) {
+		return dao.onetitle(vo);
+	}
+	
 	public List<BarrierFreeVO> all(PageVO vo) {
 		return dao.all(vo);
 	}

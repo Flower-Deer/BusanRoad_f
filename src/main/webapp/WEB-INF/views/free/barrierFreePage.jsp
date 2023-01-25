@@ -234,7 +234,19 @@ a:visited {
 
 
 				</div>
-				
+				<div style="margin:5px;">
+				<%
+					//model의 속성값을 꺼낼 때는 request.getAttribute("모델명");
+				int pages = Integer.parseInt(request.getAttribute("pages").toString());
+
+				for (int p = 1; p <= pages; p++) {
+				%>
+				<button type="button" class="b1 btn btn-secondary" pageNo="<%=p%>"
+					style="background: #215BA3; color: white;"><%=p%></button>
+				<%
+					}
+				%>
+				</div>
 			</div>
 
 		</div>
